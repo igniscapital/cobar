@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "public-files",
@@ -109,7 +109,8 @@
           "componentImportPath": "@plasmicpkgs/radix-ui"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "vAGhiduYQcXwriW3jEbZ3x",
@@ -227,6 +228,11 @@
           "id": "Mg6sUCBn8bIb",
           "name": "white-parchment-paper_53876-92954.png 3",
           "filePath": "../public/plasmic/website_starter/images/whiteParchmentPaper5387692954Png3.png"
+        },
+        {
+          "id": "fm9iA8JXgfsz",
+          "name": "donpablo.jpg",
+          "filePath": "../public/plasmic/website_starter/images/donpablojpg.jpg"
         }
       ],
       "indirect": false,

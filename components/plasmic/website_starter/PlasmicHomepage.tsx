@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { PlasmicHead } from "@plasmicapp/react-web";
 import Dialog from "../../Dialog"; // plasmic-import: 2NiAx_IOLi93/component
 import Button from "../../Button"; // plasmic-import: mredfESl2zMt/component
 
@@ -89,6 +90,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
+  pageMetadataOverride?: Flex__<typeof PlasmicHead>;
   section?: Flex__<"section">;
   columns?: Flex__<"div">;
   h1?: Flex__<"h1">;
@@ -173,6 +175,17 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
+          <PlasmicHead
+            data-plasmic-name={"pageMetadataOverride"}
+            data-plasmic-override={overrides.pageMetadataOverride}
+            className={classNames("__wab_instance", sty.pageMetadataOverride)}
+            description={
+              'Pablo Escobar Coin $COBAR" is a memecoin inspired by the infamous Colombian drug lord Pablo Escobar. This memecoin seeks to capture the rebellious and daring spirit often associated with Escobar, offering a unique and edgy investment opportunity in the cryptocurrency market.'
+            }
+            image={"/plasmic/website_starter/images/donpablojpg.jpg"}
+            title={"$COBAR on SOL"}
+          />
+
           <section
             data-plasmic-name={"section"}
             data-plasmic-override={overrides.section}
@@ -300,6 +313,22 @@ function PlasmicHomepage__RenderFunc(props: {
                       {"50% Team Allocation"}
                     </h5>
                   </Stack__>
+                  <Stack__
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox___8CafF)}
+                  >
+                    <h5
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h5,
+                        projectcss.__wab_text,
+                        sty.h5__iSbdV
+                      )}
+                    >
+                      {"CA : 6tekh957BwnQASctMaGvCpKQxxqGBPDRbJfRUaMfGgur"}
+                    </h5>
+                  </Stack__>
                 </Stack__>
                 <Stack__
                   as={"div"}
@@ -341,6 +370,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         sty.link__x9N6I
                       )}
                       component={Link}
+                      href={"https://t.me/Escobarcartelsol"}
                       platform={"nextjs"}
                     >
                       <TelegramSvgrepoCom1SvgIcon
@@ -487,7 +517,17 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "columns", "h1", "img", "dialog", "button"],
+  root: [
+    "root",
+    "pageMetadataOverride",
+    "section",
+    "columns",
+    "h1",
+    "img",
+    "dialog",
+    "button"
+  ],
+  pageMetadataOverride: ["pageMetadataOverride"],
   section: ["section", "columns", "h1", "img"],
   columns: ["columns", "h1", "img"],
   h1: ["h1"],
@@ -500,6 +540,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  pageMetadataOverride: typeof PlasmicHead;
   section: "section";
   columns: "div";
   h1: "h1";
@@ -568,6 +609,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    pageMetadataOverride: makeNodeComponent("pageMetadataOverride"),
     section: makeNodeComponent("section"),
     columns: makeNodeComponent("columns"),
     h1: makeNodeComponent("h1"),
